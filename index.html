@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faisal Iqbal - Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+            width: 100%;
+            max-width: 100%;
+            position: relative;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: fixed;
+            width: 95%;
+            top: 3%;
+            left:2.5%;
+            border-radius: 20px;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            margin: 3px 0;
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+
+        .menu-toggle.active span:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active span:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 0.5rem 1rem;
+            border-radius: 10px;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: #ffd700;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-links a:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .nav-links a:hover::after {
+            width: 80%;
+        }
+
+        /* Section Styles */
+        section {
+            min-height: 100vh;
+            padding: 6rem 2rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: white;
+        }
+
+        .section-header h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .highlight {
+            background: linear-gradient(45deg, #ffed4e, #ff9a56, #ff6b6b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: bold;
+        }
+
+        /* Home Section */
+        #home {
+            padding-top: 6rem;
+        }
+
+        .home-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: white;
+        }
+
+        .home-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .home-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+            align-items: start;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .content:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .text-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            opacity: 0.9;
+        }
+
+        .text-content h2 {
+            color: #ffd700;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        .home-aside {
+            text-align: center;
+        }
+
+        .profile-pic {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .profile-pic:hover {
+            transform: scale(1.02);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        .image-caption {
+            margin-top: 1rem;
+            color: #ffd700;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            border-color: rgba(255, 215, 0, 0.3);
+        }
+
+        .skill-category h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            color: #ffd700;
+            border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+            padding-bottom: 0.5rem;
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            background: rgba(255, 255, 255, 0.1);
+            margin: 0.5rem 0;
+            padding: 0.8rem 1rem;
+            border-radius: 8px;
+            border-left: 4px solid #ffd700;
+            opacity: 0.9;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            border-color: rgba(255, 215, 0, 0.3);
+        }
+
+        .project-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #ffd700;
+        }
+
+        .project-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .project-card p {
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-tag {
+            background: rgba(255, 215, 0, 0.2);
+            color: #ffd700;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: linear-gradient(45deg, #ffd700, #ffed4e);
+            color: #333;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+        }
+
+        /* Gallery Section */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .gallery-item {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            border-color: rgba(255, 215, 0, 0.3);
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+
+        .gallery-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #ffd700;
+        }
+
+        /* Hobbies Section */
+        .hobbies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .hobby-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .hobby-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            border-color: rgba(255, 215, 0, 0.3);
+        }
+
+        .hobby-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #ffd700;
+            text-align: center;
+        }
+
+        .hobby-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            display: block;
+            text-align: center;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .contact-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            border-color: rgba(255, 215, 0, 0.3);
+        }
+
+        .contact-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #ffd700;
+        }
+
+        .contact-card a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            position: relative;
+            display: inline-block;
+        }
+
+        .contact-card a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #ffd700;
+            transition: width 0.3s ease;
+        }
+
+        .contact-card a:hover {
+            color: #ffd700;
+            transform: scale(1.02);
+        }
+
+        .contact-card a:hover::after {
+            width: 100%;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            * {
+                max-width: 100%;
+                box-sizing: border-box;
+            }
+            
+            html, body {
+                overflow-x: hidden;
+                width: 100%;
+                max-width: 100%;
+            }
+            
+            .menu-toggle {
+                display: flex;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                height: 100vh;
+                width: 250px;
+                background: rgba(0, 0, 0, 0.95);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 2rem;
+                transition: right 0.3s ease;
+                z-index: 1001;
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .nav-links a {
+                font-size: 1.2rem;
+                padding: 1rem 2rem;
+                width: 100%;
+                text-align: center;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            nav {
+                padding: 0 1rem;
+            }
+
+            section {
+                padding: 5rem 1rem 2rem;
+                width: 100%;
+                max-width: 100%;
+                overflow-x: hidden;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .section-header p {
+                font-size: 1rem;
+            }
+
+            /* Home Section Mobile */
+            #home {
+                padding-top: 6rem;
+            }
+
+            .home-header h1 {
+                font-size: 2rem;
+            }
+
+            .home-header p {
+                display: none;
+            }
+
+            .content {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                text-align: center;
+                padding: 1.5rem;
+            }
+
+            .text-content {
+                order: 2;
+                font-size: 1rem;
+            }
+
+            .text-content h2 {
+                font-size: 1.5rem;
+                margin-bottom: 1rem;
+            }
+
+            .text-content p:not(:first-of-type) {
+                display: none;
+            }
+
+            .home-aside {
+                order: 1;
+            }
+
+            .profile-pic {
+                width: 200px;
+                height: 200px;
+                border-radius: 15px;
+                object-fit: cover;
+                border: 3px solid rgba(255, 255, 255, 0.3);
+            }
+
+            .image-caption {
+                display: none;
+            }
+
+            .logo {
+                display: none;
+            }
+
+            /* Grid adjustments for mobile */
+            .skills-grid,
+            .projects-grid,
+            .gallery-grid,
+            .hobbies-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+                width: 100%;
+                max-width: 100%;
+            }
+
+            .skill-category,
+            .project-card,
+            .gallery-item,
+            .hobby-card,
+            .contact-card {
+                padding: 1.5rem;
+                width: 100%;
+                max-width: 100%;
+                box-sizing: border-box;
+            }
+
+            .contact-card a {
+                font-size: 1rem;
+                word-break: break-all;
+            }
+
+            .tech-tags {
+                flex-wrap: wrap;
+                width: 100%;
+            }
+
+            .tech-tag {
+                white-space: nowrap;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-links {
+                width: 200px;
+            }
+
+            .home-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .home-header p {
+                display: none;
+            }
+
+            .content {
+                padding: 1rem;
+                gap: 1rem;
+            }
+
+            .text-content {
+                font-size: 0.9rem;
+            }
+
+            .text-content h2 {
+                font-size: 1.3rem;
+            }
+
+            .profile-pic {
+                width: 150px;
+                height: 150px;
+            }
+
+            .image-caption {
+                display: none;
+            }
+
+            .skill-category,
+            .project-card,
+            .gallery-item,
+            .hobby-card,
+            .contact-card {
+                padding: 1rem;
+                width: 100%;
+                max-width: 100%;
+                box-sizing: border-box;
+            }
+
+            .logo {
+                display: none;
+            }
+
+            section {
+                width: 100%;
+                max-width: 100%;
+                overflow-x: hidden;
+                padding: 5rem 0.5rem 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">Faisal Iqbal</div>
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#hobbies">Hobbies</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home">
+        <div class="home-header">
+            <h1>Welcome to My <span class="highlight">Portfolio</span></h1>
+        </div>
+
+        <div class="content">
+            <div class="text-content">
+                <h2>About Me</h2>
+                <p>I am a dedicated Software Engineering student with a strong foundation in mathematics and computer science. My analytical approach to problem-solving, combined with a deep understanding of algorithms and data structures, enables me to develop efficient and scalable solutions.</p>
+                <br>
+                <p>I have hands-on experience with modern programming languages and frameworks, and I am particularly interested in emerging technologies including Web3, Blockchain, Artificial Intelligence, and Cloud Computing. I am committed to applying these technologies to solve real-world challenges and drive innovation in the software development industry.</p>
+            </div>
+
+            <div class="home-aside">
+                <img src="faisal.jpeg" alt="Faisal Iqbal" class="profile-pic">
+                <div class="image-caption">Faisal Iqbal<br>Software Engineering Student</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="section-header">
+            <h2>My <span class="highlight">Skills</span> & Expertise</h2>
+            <p>A comprehensive overview of my technical skills and competencies</p>
+        </div>
+        
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3>Web Development</h3>
+                <ul class="skill-list">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>Web Engineering (Ongoing)</li>
+                </ul>
+            </div>
+
+            <div class="skill-category">
+                <h3>CyberSecurity & ML</h3>
+                <ul class="skill-list">
+                    <li>CyberSecurity</li>
+                    <li>Firewalls</li>
+                    <li>ML Algorithms</li>
+                </ul>
+            </div>
+
+            <div class="skill-category">
+                <h3>Programming Languages</h3>
+                <ul class="skill-list">
+                    <li>C++</li>
+                    <li>Java</li>
+                    <li>MySQL</li>
+                    <li>Matlab</li>
+                    <li>Python</li>
+                </ul>
+            </div>
+
+            <div class="skill-category">
+                <h3>Core Computer Science</h3>
+                <ul class="skill-list">
+                    <li>Mathematics</li>
+                    <li>Algorithms</li>
+                    <li>Operating Systems</li>
+                    <li>Cloud Computing</li>
+                </ul>
+            </div>
+
+            <div class="skill-category">
+                <h3>Hardware & AI</h3>
+                <ul class="skill-list">
+                    <li>Digital Logic Design</li>
+                    <li>Basics of AI Concepts</li>
+                </ul>
+            </div>
+
+            <div class="skill-category">
+                <h3>Development Tools</h3>
+                <ul class="skill-list">
+                    <li>VS Code</li>
+                    <li>GitHub</li>
+                    <li>Matlab</li>
+                    <li>Proteus</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="section-header">
+            <h2>Featured <span class="highlight">Projects</span></h2>
+            <p>A comprehensive portfolio showcasing innovative software development projects and technical expertise</p>
+        </div>
+
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-icon">📁</div>
+                <h3>File Management System</h3>
+                <p>A comprehensive file management system built with Python, featuring an intuitive GUI interface for efficient file operations, directory navigation, and data organization.</p>
+                <div class="tech-tags">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Tkinter</span>
+                    <span class="tech-tag">JSON</span>
+                    <span class="tech-tag">File I/O</span>
+                    <span class="tech-tag">GUI Design</span>
+                </div>
+                <a href="https://github.com/faisaliqbalkhattak/File-Management-System" class="btn" target="_blank">View Code</a>
+            </div>
+
+            <div class="project-card">
+                <div class="project-icon">🔍</div>
+                <h3>SearchWright - Search Engine</h3>
+                <p>An advanced search engine implementation utilizing TF-IDF algorithms and natural language processing to efficiently index and retrieve information from large datasets of 50,000+ articles.</p>
+                <div class="tech-tags">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Pandas</span>
+                    <span class="tech-tag">NLTK</span>
+                    <span class="tech-tag">TF-IDF</span>
+                    <span class="tech-tag">Data Mining</span>
+                </div>
+                <a href="https://github.com/faisaliqbalkhattak/Search-Engine" class="btn" target="_blank">View Code</a>
+            </div>
+
+            <div class="project-card">
+                <div class="project-icon">🌐</div>
+                <h3>BFS Graph Traversal</h3>
+                <p>A high-performance C++ implementation of the Breadth-First Search algorithm, optimized for graph traversal operations with clean, maintainable code architecture.</p>
+                <div class="tech-tags">
+                    <span class="tech-tag">C++</span>
+                    <span class="tech-tag">STL</span>
+                    <span class="tech-tag">Algorithms</span>
+                    <span class="tech-tag">Data Structures</span>
+                    <span class="tech-tag">Graph Theory</span>
+                </div>
+                <a href="https://github.com/faisaliqbalkhattak/BSF_graph_traversal" class="btn" target="_blank">View Code</a>
+            </div>
+
+            <div class="project-card">
+                <div class="project-icon">🌐</div>
+                <h3>Kali Linux Website Clone</h3>
+                <p>A pixel-perfect recreation of the Kali Linux official website, demonstrating advanced HTML5/CSS3 skills with responsive design principles and modern web development practices.</p>
+                <div class="tech-tags">
+                    <span class="tech-tag">HTML5</span>
+                    <span class="tech-tag">CSS3</span>
+                    <span class="tech-tag">Responsive Design</span>
+                    <span class="tech-tag">Animations</span>
+                    <span class="tech-tag">Flexbox</span>
+                    <span class="tech-tag">Grid</span>
+                </div>
+                <a href="https://github.com/faisaliqbalkhattak/Website-clone" class="btn" target="_blank">View Code</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery">
+        <div class="section-header">
+            <h2>My <span class="highlight">Gallery</span></h2>
+            <p>A visual journey through my experiences and memorable moments</p>
+        </div>
+
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="images/kali_linux_desktop.jpg" alt="Kali Linux Desktop" class="gallery-image">
+                <h3>My Favorite OS Interface</h3>
+                <div class="image-description">This is Kali Linux with GNOME Shell desktop installed. This is the most used OS of mine - it is very simple and beautiful, at least for me. I love its clean interface and powerful capabilities.</div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/moon_view_karak.jpg" alt="Moon View from Karak" class="gallery-image">
+                <h3>Beautiful Moon View</h3>
+                <div class="image-description">A picture by me from my bed of the beautiful moon view of Karak. The serene night sky and the glowing moon create such a peaceful atmosphere that I never get tired of watching.</div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/toyota_dream_workplace.jpeg" alt="Toyota" class="gallery-image">
+                <h3>Dream Workplace - Toyota</h3>
+                <div class="image-description">I dream to work here someday and impact decisions of this place. Toyota represents innovation, quality, and excellence - values that align with my career aspirations in engineering.</div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/peshawar_home_city.jpeg" alt="Peshawar City" class="gallery-image">
+                <h3>Home Sweet Home - Peshawar</h3>
+                <div class="image-description">I feel this place home. May this city live in peace. Peshawar holds a special place in my heart with its rich culture, warm people, and beautiful landscapes.</div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/nust_university_dream.jpeg" alt="NUST University" class="gallery-image">
+                <h3>My First Dream - NUST</h3>
+                <div class="image-description">This was my first dream to study engineering at here and I had successfully been here for the journey. NUST represents academic excellence and the foundation of my engineering career.</div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/giant_ludo_creation.jpeg" alt="Giant Ludo Game" class="gallery-image">
+                <h3>Giant Ludo Creation</h3>
+                <div class="image-description">I was able to draw this huge 30 by 30 feet ludo on the ground and we also played it by throwing the dice towards the sky and see what comes out. Very playful and memorable experience!</div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/village_sunset_clouds.jpeg" alt="Village Sunset" class="gallery-image">
+                <h3>Village Sunset</h3>
+                <div class="image-description">The sunset time of my village. There's something magical about the golden hour in rural areas - the peaceful atmosphere, the warm colors painting the sky, and the tranquil end to another beautiful day.</div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/favorite_dish.jpeg" alt="Favorite Dish" class="gallery-image">
+                <h3>My Favorite Dish</h3>
+                <div class="image-description">This is the dish I like most. The brand I like for this dish is Janana Foods Karak - it has the perfect taste and authentic flavor that I always crave.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hobbies Section -->
+    <section id="hobbies">
+        <div class="section-header">
+            <h2>My <span class="highlight">Hobbies</span></h2>
+            <p>Exploring my passions and interests beyond the world of technology</p>
+        </div>
+
+        <div class="hobbies-grid">
+            <div class="hobby-card">
+                <div class="hobby-icon">🏏</div>
+                <h3>Cricket</h3>
+                <div>I enjoy playing cricket, which helps me stay active and work as part of a team. It's a great way to unwind and connect with friends while improving my physical fitness and strategic thinking.</div>
+            </div>
+
+            <div class="hobby-card">
+                <div class="hobby-icon">💻</div>
+                <h3>Problem Solving (Coding)</h3>
+                <div>I love solving complex programming problems and challenges. It helps me think logically, improve my coding skills, and keeps me engaged with the latest technologies and algorithms.</div>
+            </div>
+
+            <div class="hobby-card">
+                <div class="hobby-icon">🧮</div>
+                <h3>Mathematical Problem Solving</h3>
+                <div>Solving mathematical problems is one of my favorite pastimes. It sharpens my analytical thinking, enhances my problem-solving abilities, and provides a strong foundation for my programming and engineering studies.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="section-header">
+            <h2>Professional <span class="highlight">Contact</span></h2>
+            <p>Connect with me for collaboration opportunities and professional inquiries</p>
+        </div>
+
+        <div class="contact-grid">
+            <div class="contact-card">
+                <h3>Email</h3>
+                <a href="mailto:fiqbal.bese23seecs@seecs.edu.pk">fiqbal.bese23seecs@seecs.edu.pk</a>
+            </div>
+
+            <div class="contact-card">
+                <h3>Phone</h3>
+                <a href="tel:03365647081">03365647081</a>
+            </div>
+
+            <div class="contact-card">
+                <h3>GitHub</h3>
+                <a href="https://github.com/faisaliqbalkhattak" target="_blank">github.com/faisaliqbalkhattak</a>
+            </div>
+
+            <div class="contact-card">
+                <h3>LinkedIn</h3>
+                <a href="https://linkedin.com/in/faisaliqbalkhattak/" target="_blank">linkedin.com/in/faisaliqbalkhattak</a>
+            </div>
+
+            <div class="contact-card">
+                <h3>Facebook</h3>
+                <a href="https://www.facebook.com/faisaliqbalkhattakem" target="_blank">facebook.com/faisaliqbalkhattakem</a>
+            </div>
+
+            <div class="contact-card">
+                <h3>Instagram</h3>
+                <a href="https://www.instagram.com/faisaliqbalkhattakem" target="_blank">instagram.com/faisaliqbalkhattakem</a>
+            </div>
+        </div>
+    </section>
+
+        <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.getElementById('nav-links');
+
+        mobileMenu.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a link
+        navLinks.addEventListener('click', (e) => {
+            if (e.target.tagName === 'A') {
+                mobileMenu.classList.remove('active');
+                navLinks.classList.remove('active');
+            }
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!mobileMenu.contains(e.target) && !navLinks.contains(e.target)) {
+                mobileMenu.classList.remove('active');
+                navLinks.classList.remove('active');
+            }
+        });
+
+        // Smooth scrolling with offset for fixed header
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offsetTop = target.offsetTop - 80; // Account for fixed header
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Active navigation highlighting
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-links a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
