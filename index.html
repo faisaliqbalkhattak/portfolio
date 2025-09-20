@@ -24,7 +24,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #e0e0e0;
             min-height: 100vh;
             overflow-x: hidden;
             width: 100%;
@@ -33,16 +33,16 @@
         }
 
         header {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 1rem 0;
+            background: #e0e0e0;
+            padding: .7rem 0;
             position: fixed;
             width: 95%;
-            top: 3%;
-            left:2.5%;
+            top: 1.5%;
+            left: 2.5%;
             border-radius: 20px;
             z-index: 1000;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 8px 8px 16px #bebebe, -8px -8px 16px #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
         nav {
@@ -55,15 +55,62 @@
         }
 
         .logo {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-weight: bold;
-            color: white;
+        }
+
+        .logo a {
+            color: transparent;
+            background: linear-gradient(45deg, #ff6b35, #f7931e, #1e90ff, #dc143c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
         }
 
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: 1rem;
+        }
+
+        .nav-links a {
+            color: transparent;
+            background: linear-gradient(45deg, #ff6b35, #f7931e, #1e90ff, #dc143c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            padding: 0.75rem 1.5rem;
+            border-radius: 15px;
+            position: relative;
+            font-weight: 500;
+        }
+
+        .nav-links a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: #e0e0e0;
+            border-radius: 15px;
+            box-shadow: 4px 4px 8px #bebebe, -4px -4px 8px #ffffff;
+            z-index: -1;
+        }
+
+        .nav-links a:hover {
+            color: transparent;
+            background: linear-gradient(45deg, #ff6b35, #f7931e, #1e90ff, #dc143c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links a:hover::before {
+            box-shadow: inset 4px 4px 8px #bebebe, inset -4px -4px 8px #ffffff;
         }
 
         .menu-toggle {
@@ -76,7 +123,7 @@
         .menu-toggle span {
             width: 25px;
             height: 3px;
-            background: white;
+            background: linear-gradient(45deg, #ff6b35, #1e90ff);
             margin: 3px 0;
             transition: 0.3s;
             border-radius: 2px;
@@ -92,36 +139,6 @@
 
         .menu-toggle.active span:nth-child(3) {
             transform: rotate(45deg) translate(-5px, -6px);
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            position: relative;
-            padding: 0.5rem 1rem;
-            border-radius: 10px;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            width: 0;
-            height: 2px;
-            background: #ffd700;
-            transition: all 0.3s ease;
-            transform: translateX(-50%);
-        }
-
-        .nav-links a:hover {
-            background: rgba(255, 255, 255, 0.1);
-            transform: translateY(-2px);
-        }
-
-        .nav-links a:hover::after {
-            width: 80%;
         }
 
         /* Section Styles */
@@ -140,22 +157,22 @@
         .section-header {
             text-align: center;
             margin-bottom: 3rem;
-            color: white;
+            color: #333;
         }
 
         .section-header h2 {
             font-size: 3rem;
             margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            color: #333;
         }
 
         .section-header p {
             font-size: 1.2rem;
-            opacity: 0.9;
+            color: #666;
         }
 
         .highlight {
-            background: linear-gradient(45deg, #ffed4e, #ff9a56, #ff6b6b);
+            background: linear-gradient(45deg, #ff6b35, #f7931e, #1e90ff, #dc143c);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -170,18 +187,18 @@
         .home-header {
             text-align: center;
             margin-bottom: 3rem;
-            color: white;
+            color: #333;
         }
 
         .home-header h1 {
             font-size: 3rem;
             margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            color: #333;
         }
 
         .home-header p {
             font-size: 1.2rem;
-            opacity: 0.9;
+            color: #666;
         }
 
         .content {
@@ -189,30 +206,32 @@
             grid-template-columns: 2fr 1fr;
             gap: 3rem;
             align-items: start;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
+            background: #e0e0e0;
+            border-radius: 20px;
             padding: 2rem;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            color: white;
+            box-shadow: 8px 8px 16px #bebebe, -8px -8px 16px #ffffff;
+            color: #333;
             transition: all 0.3s ease;
         }
 
         .content:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            box-shadow: 12px 12px 20px #bebebe, -12px -12px 20px #ffffff;
         }
 
         .text-content {
             font-size: 1.1rem;
             line-height: 1.8;
-            opacity: 0.9;
+            color: #333;
         }
 
         .text-content h2 {
-            color: #ffd700;
+            background: linear-gradient(45deg, #ff6b35, #1e90ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             margin-bottom: 1rem;
             font-size: 1.8rem;
+            font-weight: bold;
         }
 
         .home-aside {
@@ -222,19 +241,21 @@
         .profile-pic {
             width: 100%;
             max-width: 300px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            box-shadow: 8px 8px 16px #bebebe, -8px -8px 16px #ffffff;
             transition: all 0.3s ease;
         }
 
         .profile-pic:hover {
-            transform: scale(1.02);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            box-shadow: 12px 12px 20px #bebebe, -12px -12px 20px #ffffff;
         }
 
         .image-caption {
             margin-top: 1rem;
-            color: #ffd700;
+            background: linear-gradient(45deg, #ff6b35, #dc143c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             font-weight: bold;
             font-size: 1.1rem;
         }
@@ -247,27 +268,29 @@
         }
 
         .skill-category {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
+            background: #e0e0e0;
+            border-radius: 20px;
             padding: 2rem;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            color: white;
+            box-shadow: 8px 8px 16px #bebebe, -8px -8px 16px #ffffff;
+            color: #333;
             transition: all 0.3s ease;
         }
 
         .skill-category:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-            border-color: rgba(255, 215, 0, 0.3);
+            box-shadow: 12px 12px 20px #bebebe, -12px -12px 20px #ffffff;
         }
 
         .skill-category h3 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
             text-align: center;
-            color: #ffd700;
-            border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+            background: linear-gradient(45deg, #ff6b35, #1e90ff, #dc143c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: bold;
+            border-bottom: 2px solid transparent;
+            border-image: linear-gradient(45deg, #ff6b35, #1e90ff) 1;
             padding-bottom: 0.5rem;
         }
 
@@ -276,12 +299,20 @@
         }
 
         .skill-list li {
-            background: rgba(255, 255, 255, 0.1);
+            background: #e0e0e0;
             margin: 0.5rem 0;
             padding: 0.8rem 1rem;
-            border-radius: 8px;
-            border-left: 4px solid #ffd700;
-            opacity: 0.9;
+            border-radius: 12px;
+            border-left: 4px solid #ff6b35;
+            color: #333;
+            box-shadow: inset 2px 2px 4px #bebebe, inset -2px -2px 4px #ffffff;
+            transition: all 0.3s ease;
+        }
+
+        .skill-list li:hover {
+            border-left-color: #1e90ff;
+            box-shadow: 2px 2px 4px #bebebe, -2px -2px 4px #ffffff;
+            transform: translateX(5px);
         }
 
         /* Projects Section */
@@ -292,36 +323,38 @@
         }
 
         .project-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
+            background: #e0e0e0;
+            border-radius: 20px;
             padding: 2rem;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            color: white;
+            box-shadow: 8px 8px 16px #bebebe, -8px -8px 16px #ffffff;
+            color: #333;
             transition: all 0.3s ease;
         }
 
         .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-            border-color: rgba(255, 215, 0, 0.3);
+            box-shadow: 12px 12px 20px #bebebe, -12px -12px 20px #ffffff;
         }
 
         .project-card h3 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
-            color: #ffd700;
+            background: linear-gradient(45deg, #ff6b35, #1e90ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: bold;
         }
 
         .project-icon {
             font-size: 2rem;
             margin-bottom: 1rem;
             display: block;
+            filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2));
         }
 
         .project-card p {
             margin-bottom: 1.5rem;
-            opacity: 0.9;
+            color: #333;
         }
 
         .tech-tags {
@@ -332,29 +365,37 @@
         }
 
         .tech-tag {
-            background: rgba(255, 215, 0, 0.2);
-            color: #ffd700;
+            background: #e0e0e0;
+            color: #ff6b35;
             padding: 0.3rem 0.8rem;
             border-radius: 15px;
             font-size: 0.9rem;
-            border: 1px solid rgba(255, 215, 0, 0.3);
+            box-shadow: 2px 2px 4px #bebebe, -2px -2px 4px #ffffff;
+            transition: all 0.3s ease;
+        }
+
+        .tech-tag:hover {
+            box-shadow: inset 2px 2px 4px #bebebe, inset -2px -2px 4px #ffffff;
+            color: #1e90ff;
         }
 
         .btn {
             display: inline-block;
             padding: 0.8rem 1.5rem;
-            background: linear-gradient(45deg, #ffd700, #ffed4e);
+            background: #e0e0e0;
             color: #333;
             text-decoration: none;
-            border-radius: 25px;
+            border-radius: 15px;
             font-weight: bold;
             transition: all 0.3s ease;
             text-align: center;
+            box-shadow: 4px 4px 8px #bebebe, -4px -4px 8px #ffffff;
         }
 
         .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+            box-shadow: inset 4px 4px 8px #bebebe, inset -4px -4px 8px #ffffff;
+            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            color: white;
         }
 
         /* Gallery Section */
@@ -365,34 +406,36 @@
         }
 
         .gallery-item {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
+            background: #e0e0e0;
+            border-radius: 20px;
             padding: 2rem;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            color: white;
+            box-shadow: 8px 8px 16px #bebebe, -8px -8px 16px #ffffff;
+            color: #333;
             text-align: center;
             transition: all 0.3s ease;
         }
 
         .gallery-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-            border-color: rgba(255, 215, 0, 0.3);
+            box-shadow: 12px 12px 20px #bebebe, -12px -12px 20px #ffffff;
         }
 
         .gallery-image {
             width: 100%;
             height: 200px;
             object-fit: cover;
-            border-radius: 10px;
+            border-radius: 15px;
             margin-bottom: 1rem;
+            box-shadow: 4px 4px 8px #bebebe, -4px -4px 8px #ffffff;
         }
 
         .gallery-item h3 {
             font-size: 1.3rem;
             margin-bottom: 1rem;
-            color: #ffd700;
+            background: linear-gradient(45deg, #ff6b35, #dc143c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: bold;
         }
 
         /* Hobbies Section */
@@ -403,25 +446,26 @@
         }
 
         .hobby-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
+            background: #e0e0e0;
+            border-radius: 20px;
             padding: 2rem;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            color: white;
+            box-shadow: 8px 8px 16px #bebebe, -8px -8px 16px #ffffff;
+            color: #333;
             transition: all 0.3s ease;
         }
 
         .hobby-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-            border-color: rgba(255, 215, 0, 0.3);
+            box-shadow: 12px 12px 20px #bebebe, -12px -12px 20px #ffffff;
         }
 
         .hobby-card h3 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
-            color: #ffd700;
+            background: linear-gradient(45deg, #1e90ff, #dc143c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: bold;
             text-align: center;
         }
 
@@ -430,6 +474,7 @@
             margin-bottom: 1rem;
             display: block;
             text-align: center;
+            filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2));
         }
 
         /* Contact Section */
@@ -440,35 +485,40 @@
         }
 
         .contact-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
+            background: #e0e0e0;
+            border-radius: 20px;
             padding: 2rem;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            color: white;
+            box-shadow: 8px 8px 16px #bebebe, -8px -8px 16px #ffffff;
+            color: #333;
             text-align: center;
             transition: all 0.3s ease;
         }
 
         .contact-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-            border-color: rgba(255, 215, 0, 0.3);
+            box-shadow: 12px 12px 20px #bebebe, -12px -12px 20px #ffffff;
         }
 
         .contact-card h3 {
             font-size: 1.3rem;
             margin-bottom: 1rem;
-            color: #ffd700;
+            background: linear-gradient(45deg, #ff6b35, #1e90ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: bold;
         }
 
         .contact-card a {
-            color: white;
+            color: #333;
             text-decoration: none;
             font-size: 1.1rem;
             transition: all 0.3s ease;
             position: relative;
             display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 10px;
+            background: #e0e0e0;
+            box-shadow: 2px 2px 4px #bebebe, -2px -2px 4px #ffffff;
         }
 
         .contact-card a::after {
@@ -478,13 +528,14 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: #ffd700;
+            background: linear-gradient(45deg, #ff6b35, #dc143c);
             transition: width 0.3s ease;
         }
 
         .contact-card a:hover {
-            color: #ffd700;
-            transform: scale(1.02);
+            background: linear-gradient(45deg, #ff6b35, #1e90ff);
+            color: white;
+            box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.2);
         }
 
         .contact-card a:hover::after {
@@ -497,13 +548,14 @@
                 max-width: 100%;
                 box-sizing: border-box;
             }
-            
-            html, body {
+
+            html,
+            body {
                 overflow-x: hidden;
                 width: 100%;
                 max-width: 100%;
             }
-            
+
             .menu-toggle {
                 display: flex;
             }
@@ -710,7 +762,7 @@
 <body>
     <header>
         <nav>
-            <div class="logo">Faisal Iqbal</div>
+            <div class="logo"><a href="#home">Faisal Iqbal</a></div>
             <div class="menu-toggle" id="mobile-menu">
                 <span></span>
                 <span></span>
@@ -736,9 +788,14 @@
         <div class="content">
             <div class="text-content">
                 <h2>About Me</h2>
-                <p>I am a dedicated Software Engineering student with a strong foundation in mathematics and computer science. My analytical approach to problem-solving, combined with a deep understanding of algorithms and data structures, enables me to develop efficient and scalable solutions.</p>
+                <p>I am a dedicated Software Engineering student with a strong foundation in mathematics and computer
+                    science. My analytical approach to problem-solving, combined with a deep understanding of algorithms
+                    and data structures, enables me to develop efficient and scalable solutions.</p>
                 <br>
-                <p>I have hands-on experience with modern programming languages and frameworks, and I am particularly interested in emerging technologies including Web3, Blockchain, Artificial Intelligence, and Cloud Computing. I am committed to applying these technologies to solve real-world challenges and drive innovation in the software development industry.</p>
+                <p>I have hands-on experience with modern programming languages and frameworks, and I am particularly
+                    interested in emerging technologies including Web3, Blockchain, Artificial Intelligence, and Cloud
+                    Computing. I am committed to applying these technologies to solve real-world challenges and drive
+                    innovation in the software development industry.</p>
             </div>
 
             <div class="home-aside">
@@ -754,7 +811,7 @@
             <h2>My <span class="highlight">Skills</span> & Expertise</h2>
             <p>A comprehensive overview of my technical skills and competencies</p>
         </div>
-        
+
         <div class="skills-grid">
             <div class="skill-category">
                 <h3>Web Development</h3>
@@ -827,7 +884,8 @@
             <div class="project-card">
                 <div class="project-icon">📁</div>
                 <h3>File Management System</h3>
-                <p>A comprehensive file management system built with Python, featuring an intuitive GUI interface for efficient file operations, directory navigation, and data organization.</p>
+                <p>A comprehensive file management system built with Python, featuring an intuitive GUI interface for
+                    efficient file operations, directory navigation, and data organization.</p>
                 <div class="tech-tags">
                     <span class="tech-tag">Python</span>
                     <span class="tech-tag">Tkinter</span>
@@ -835,13 +893,15 @@
                     <span class="tech-tag">File I/O</span>
                     <span class="tech-tag">GUI Design</span>
                 </div>
-                <a href="https://github.com/faisaliqbalkhattak/File-Management-System" class="btn" target="_blank">View Code</a>
+                <a href="https://github.com/faisaliqbalkhattak/File-Management-System" class="btn" target="_blank">View
+                    Code</a>
             </div>
 
             <div class="project-card">
                 <div class="project-icon">🔍</div>
                 <h3>SearchWright - Search Engine</h3>
-                <p>An advanced search engine implementation utilizing TF-IDF algorithms and natural language processing to efficiently index and retrieve information from large datasets of 50,000+ articles.</p>
+                <p>An advanced search engine implementation utilizing TF-IDF algorithms and natural language processing
+                    to efficiently index and retrieve information from large datasets of 50,000+ articles.</p>
                 <div class="tech-tags">
                     <span class="tech-tag">Python</span>
                     <span class="tech-tag">Pandas</span>
@@ -855,7 +915,8 @@
             <div class="project-card">
                 <div class="project-icon">🌐</div>
                 <h3>BFS Graph Traversal</h3>
-                <p>A high-performance C++ implementation of the Breadth-First Search algorithm, optimized for graph traversal operations with clean, maintainable code architecture.</p>
+                <p>A high-performance C++ implementation of the Breadth-First Search algorithm, optimized for graph
+                    traversal operations with clean, maintainable code architecture.</p>
                 <div class="tech-tags">
                     <span class="tech-tag">C++</span>
                     <span class="tech-tag">STL</span>
@@ -863,13 +924,15 @@
                     <span class="tech-tag">Data Structures</span>
                     <span class="tech-tag">Graph Theory</span>
                 </div>
-                <a href="https://github.com/faisaliqbalkhattak/BSF_graph_traversal" class="btn" target="_blank">View Code</a>
+                <a href="https://github.com/faisaliqbalkhattak/BSF_graph_traversal" class="btn" target="_blank">View
+                    Code</a>
             </div>
 
             <div class="project-card">
                 <div class="project-icon">🌐</div>
                 <h3>Kali Linux Website Clone</h3>
-                <p>A pixel-perfect recreation of the Kali Linux official website, demonstrating advanced HTML5/CSS3 skills with responsive design principles and modern web development practices.</p>
+                <p>A pixel-perfect recreation of the Kali Linux official website, demonstrating advanced HTML5/CSS3
+                    skills with responsive design principles and modern web development practices.</p>
                 <div class="tech-tags">
                     <span class="tech-tag">HTML5</span>
                     <span class="tech-tag">CSS3</span>
@@ -894,49 +957,63 @@
             <div class="gallery-item">
                 <img src="images/kali_linux_desktop.jpg" alt="Kali Linux Desktop" class="gallery-image">
                 <h3>My Favorite OS Interface</h3>
-                <div class="image-description">This is Kali Linux with GNOME Shell desktop installed. This is the most used OS of mine - it is very simple and beautiful, at least for me. I love its clean interface and powerful capabilities.</div>
+                <div class="image-description">This is Kali Linux with GNOME Shell desktop installed. This is the most
+                    used OS of mine - it is very simple and beautiful, at least for me. I love its clean interface and
+                    powerful capabilities.</div>
             </div>
 
             <div class="gallery-item">
                 <img src="images/moon_view_karak.jpg" alt="Moon View from Karak" class="gallery-image">
                 <h3>Beautiful Moon View</h3>
-                <div class="image-description">A picture by me from my bed of the beautiful moon view of Karak. The serene night sky and the glowing moon create such a peaceful atmosphere that I never get tired of watching.</div>
+                <div class="image-description">A picture by me from my bed of the beautiful moon view of Karak. The
+                    serene night sky and the glowing moon create such a peaceful atmosphere that I never get tired of
+                    watching.</div>
             </div>
 
             <div class="gallery-item">
                 <img src="images/toyota_dream_workplace.jpeg" alt="Toyota" class="gallery-image">
                 <h3>Dream Workplace - Toyota</h3>
-                <div class="image-description">I dream to work here someday and impact decisions of this place. Toyota represents innovation, quality, and excellence - values that align with my career aspirations in engineering.</div>
+                <div class="image-description">I dream to work here someday and impact decisions of this place. Toyota
+                    represents innovation, quality, and excellence - values that align with my career aspirations in
+                    engineering.</div>
             </div>
 
             <div class="gallery-item">
                 <img src="images/peshawar_home_city.jpeg" alt="Peshawar City" class="gallery-image">
                 <h3>Home Sweet Home - Peshawar</h3>
-                <div class="image-description">I feel this place home. May this city live in peace. Peshawar holds a special place in my heart with its rich culture, warm people, and beautiful landscapes.</div>
+                <div class="image-description">I feel this place home. May this city live in peace. Peshawar holds a
+                    special place in my heart with its rich culture, warm people, and beautiful landscapes.</div>
             </div>
 
             <div class="gallery-item">
                 <img src="images/nust_university_dream.jpeg" alt="NUST University" class="gallery-image">
                 <h3>My First Dream - NUST</h3>
-                <div class="image-description">This was my first dream to study engineering at here and I had successfully been here for the journey. NUST represents academic excellence and the foundation of my engineering career.</div>
+                <div class="image-description">This was my first dream to study engineering at here and I had
+                    successfully been here for the journey. NUST represents academic excellence and the foundation of my
+                    engineering career.</div>
             </div>
 
             <div class="gallery-item">
                 <img src="images/giant_ludo_creation.jpeg" alt="Giant Ludo Game" class="gallery-image">
                 <h3>Giant Ludo Creation</h3>
-                <div class="image-description">I was able to draw this huge 30 by 30 feet ludo on the ground and we also played it by throwing the dice towards the sky and see what comes out. Very playful and memorable experience!</div>
+                <div class="image-description">I was able to draw this huge 30 by 30 feet ludo on the ground and we also
+                    played it by throwing the dice towards the sky and see what comes out. Very playful and memorable
+                    experience!</div>
             </div>
 
             <div class="gallery-item">
                 <img src="images/village_sunset_clouds.jpeg" alt="Village Sunset" class="gallery-image">
                 <h3>Village Sunset</h3>
-                <div class="image-description">The sunset time of my village. There's something magical about the golden hour in rural areas - the peaceful atmosphere, the warm colors painting the sky, and the tranquil end to another beautiful day.</div>
+                <div class="image-description">The sunset time of my village. There's something magical about the golden
+                    hour in rural areas - the peaceful atmosphere, the warm colors painting the sky, and the tranquil
+                    end to another beautiful day.</div>
             </div>
 
             <div class="gallery-item">
                 <img src="images/favorite_dish.jpeg" alt="Favorite Dish" class="gallery-image">
                 <h3>My Favorite Dish</h3>
-                <div class="image-description">This is the dish I like most. The brand I like for this dish is Janana Foods Karak - it has the perfect taste and authentic flavor that I always crave.</div>
+                <div class="image-description">This is the dish I like most. The brand I like for this dish is Janana
+                    Foods Karak - it has the perfect taste and authentic flavor that I always crave.</div>
             </div>
         </div>
     </section>
@@ -952,19 +1029,23 @@
             <div class="hobby-card">
                 <div class="hobby-icon">🏏</div>
                 <h3>Cricket</h3>
-                <div>I enjoy playing cricket, which helps me stay active and work as part of a team. It's a great way to unwind and connect with friends while improving my physical fitness and strategic thinking.</div>
+                <div>I enjoy playing cricket, which helps me stay active and work as part of a team. It's a great way to
+                    unwind and connect with friends while improving my physical fitness and strategic thinking.</div>
             </div>
 
             <div class="hobby-card">
                 <div class="hobby-icon">💻</div>
                 <h3>Problem Solving (Coding)</h3>
-                <div>I love solving complex programming problems and challenges. It helps me think logically, improve my coding skills, and keeps me engaged with the latest technologies and algorithms.</div>
+                <div>I love solving complex programming problems and challenges. It helps me think logically, improve my
+                    coding skills, and keeps me engaged with the latest technologies and algorithms.</div>
             </div>
 
             <div class="hobby-card">
                 <div class="hobby-icon">🧮</div>
                 <h3>Mathematical Problem Solving</h3>
-                <div>Solving mathematical problems is one of my favorite pastimes. It sharpens my analytical thinking, enhances my problem-solving abilities, and provides a strong foundation for my programming and engineering studies.</div>
+                <div>Solving mathematical problems is one of my favorite pastimes. It sharpens my analytical thinking,
+                    enhances my problem-solving abilities, and provides a strong foundation for my programming and
+                    engineering studies.</div>
             </div>
         </div>
     </section>
@@ -994,22 +1075,25 @@
 
             <div class="contact-card">
                 <h3>LinkedIn</h3>
-                <a href="https://linkedin.com/in/faisaliqbalkhattak/" target="_blank">linkedin.com/in/faisaliqbalkhattak</a>
+                <a href="https://linkedin.com/in/faisaliqbalkhattak/"
+                    target="_blank">linkedin.com/in/faisaliqbalkhattak</a>
             </div>
 
             <div class="contact-card">
                 <h3>Facebook</h3>
-                <a href="https://www.facebook.com/faisaliqbalkhattakem" target="_blank">facebook.com/faisaliqbalkhattakem</a>
+                <a href="https://www.facebook.com/faisaliqbalkhattakem"
+                    target="_blank">facebook.com/faisaliqbalkhattakem</a>
             </div>
 
             <div class="contact-card">
                 <h3>Instagram</h3>
-                <a href="https://www.instagram.com/faisaliqbalkhattakem" target="_blank">instagram.com/faisaliqbalkhattakem</a>
+                <a href="https://www.instagram.com/faisaliqbalkhattakem"
+                    target="_blank">instagram.com/faisaliqbalkhattakem</a>
             </div>
         </div>
     </section>
 
-        <script>
+    <script>
         const mobileMenu = document.getElementById('mobile-menu');
         const navLinks = document.getElementById('nav-links');
 
@@ -1053,7 +1137,7 @@
         window.addEventListener('scroll', () => {
             const sections = document.querySelectorAll('section');
             const navLinks = document.querySelectorAll('.nav-links a');
-            
+
             let current = '';
             sections.forEach(section => {
                 const sectionTop = section.offsetTop - 100;
