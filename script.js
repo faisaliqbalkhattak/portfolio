@@ -1,6 +1,48 @@
 
 const mobileMenu = document.getElementById('mobile-menu');
 const navLinks = document.getElementById('nav-links');
+const header = document.querySelector('header');
+
+// Smart navigation for mobile - hide on scroll up, show on scroll down
+let lastScrollY = window.scrollY;
+let ticking = false;
+
+function updateNavVisibility() {
+    const currentScrollY = window.scrollY;
+    
+    // Only apply this behavior on mobile/tablet devices
+    if (window.innerWidth <= 768) {
+        if (currentScrollY > lastScrollY && currentScrollY > 100) {
+            // Scrolling down & past 100px - hide header
+            header.classList.add('nav-hidden');
+        } else if (currentScrollY < lastScrollY) {
+            // Scrolling up - show header
+            header.classList.remove('nav-hidden');
+        }
+    } else {
+        // Always show header on desktop
+        header.classList.remove('nav-hidden');
+    }
+    
+    lastScrollY = currentScrollY;
+    ticking = false;
+}
+
+function requestTick() {
+    if (!ticking) {
+        requestAnimationFrame(updateNavVisibility);
+        ticking = true;
+    }
+}
+
+window.addEventListener('scroll', requestTick);
+
+// Reset nav visibility on window resize
+window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) {
+        header.classList.remove('nav-hidden');
+    }
+});
 
 mobileMenu.addEventListener('click', () => {
     mobileMenu.classList.toggle('active');
