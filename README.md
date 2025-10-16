@@ -28,7 +28,7 @@ A modern, responsive single-page portfolio website showcasing my skills, project
 
 ## Live Demo
 
-Visit the live portfolio at: [Portfolio Website](https://faisaliqbalkhattak.github.io/single-page-portfolio)
+Visit the live portfolio at: [Portfolio Website](https://faisaliqbalkhattak.github.io/portfolio)
 
 ## Contact
 
