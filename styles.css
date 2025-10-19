@@ -418,8 +418,7 @@ section {
 
 .gallery-image {
     width: 100%;
-    height: 200px;
-    object-fit: cover;
+    object-fit: contain;
     border-radius: 15px;
     margin-bottom: 1rem;
     box-shadow: 4px 4px 8px #bebebe, -4px -4px 8px #ffffff;
@@ -475,11 +474,21 @@ section {
 }
 
 /* Contact Section */
+
+#contact{
+   max-width:100vw;
+    box-shadow: 0 -30px 80px #367bf0;
+   
+}
+
 .contact-grid {
+    max-width: 1200px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    margin: 0 auto; 
     gap: 2rem;
 }
+
 
 .contact-card {
     background: #e0e0e0;
