@@ -264,10 +264,11 @@ section {
 }
 
 /* Skills Section */
-.skills-grid {
+.skills-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
+    align-items: start;
 }
 
 .skill-category {
@@ -310,12 +311,22 @@ section {
     color: #333;
     box-shadow: inset 2px 2px 4px #bebebe, inset -2px -2px 4px #ffffff;
     transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
 }
 
 .skill-list li:hover {
     border-left-color: #1e90ff;
     box-shadow: 2px 2px 4px #bebebe, -2px -2px 4px #ffffff;
     transform: translateX(5px);
+}
+
+.skill-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    flex-shrink: 0;
 }
 
 /* Education Section */
@@ -404,6 +415,7 @@ section {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 2rem;
+    align-items: start;
 }
 
 .project-links {
@@ -750,7 +762,7 @@ section {
     }
 
     /* Grid adjustments for mobile */
-    .skills-grid,
+    .skills-container,
     .projects-grid,
     .education-grid,
     .hobbies-grid,
