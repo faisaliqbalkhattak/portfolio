@@ -7,7 +7,7 @@ A modern, responsive single-page portfolio website showcasing my skills, project
 - **Modern Glass-morphism Design**: Beautiful backdrop-filter effects with transparency
 - **Responsive Mobile Navigation**: Hamburger menu with smooth slide-in animation
 - **Single-Page Architecture**: Smooth scrolling navigation between sections
-- **Professional Sections**: Home, Skills, Projects, Gallery, Hobbies, and Contact
+- **Professional Sections**: Home, Skills, Projects, Experience, and Contact
 - **Mobile Optimized**: Clean, optimized mobile experience
 
 ## Sections
@@ -15,8 +15,6 @@ A modern, responsive single-page portfolio website showcasing my skills, project
 - **Home**: Professional introduction and about me
 - **Skills**: Technical competencies across multiple domains
 - **Projects**: Featured software development projects with GitHub links
-- **Gallery**: Personal moments and experiences
-- **Hobbies**: Interests beyond technology
 - **Contact**: Professional contact information
 
 ## Technologies Used
@@ -38,4 +36,4 @@ Visit the live portfolio at: [Portfolio Website](https://faisaliqbalkhattak.gith
 
 ---
 
-© 2024 Faisal Iqbal. All rights reserved.
+Designed & Developed with ✨ by [Faisal Iqbal](https://github.com/faisaliqbalkhattak) © 2026

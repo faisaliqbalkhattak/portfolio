@@ -662,6 +662,20 @@ section {
     background-clip: text;
 }
 
+/* Footer Styles */
+footer {
+    padding: 2rem;
+    text-align: center;
+    background: #e0e0e0;
+    margin-top: 2rem;
+}
+
+.footer-content p {
+    font-size: 1rem;
+    color: #555;
+    font-weight: 500;
+}
+
 /* Mobile Responsive */
 @media (max-width: 768px) {
     * {
@@ -875,4 +889,21 @@ section {
         overflow-x: hidden;
         padding: 5rem 0.5rem 2rem;
     }
+}
+/* Footer Styles */
+footer {
+    padding: 3rem 1rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.footer-content p {
+    font-size: 1rem;
+    color: #666;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+footer .highlight {
+    font-weight: 700;
 }
