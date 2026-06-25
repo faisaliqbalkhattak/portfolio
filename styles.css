@@ -513,7 +513,7 @@ section {
 .demo-card {
     background: #e0e0e0;
     border-radius: 20px;
-    padding: 2rem;
+    padding-top: 2%;
     box-shadow: 8px 8px 16px #bebebe, -8px -8px 16px #ffffff;
 }
 
@@ -812,7 +812,11 @@ footer {
         height: 45vh;
         min-height: 300px;
     }
+ 
 
+.demo-card {
+    padding-top: 0;
+}
     .demo-description {
         font-size: 0.95rem;
     }
