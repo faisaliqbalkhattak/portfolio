@@ -505,7 +505,59 @@ section {
     color: white;
 }
 
+/* PeerSupportHub Demo Section */
+.demo-section {
+    padding-bottom: 4rem;
+}
 
+.demo-card {
+    background: #e0e0e0;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 8px 8px 16px #bebebe, -8px -8px 16px #ffffff;
+}
+
+.demo-device {
+    width: min(100%, 1100px);
+    margin: 0 auto;
+}
+
+.video-stage {
+    position: relative;
+    width: 100%;
+    height: 85vh;
+    min-height: 480px;
+    overflow: hidden;
+    background: linear-gradient(180deg, #f8fafc 0%, #edf2f7 100%);
+    border-radius: 18px;
+}
+
+
+.demo-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+
+}
+
+.demo-video {
+    display: block;
+    object-fit: contain;
+    background: transparent;
+    border: 0;
+    outline: 0;
+}
+
+
+
+.demo-description {
+    max-width: 761px;
+    margin: 1.5rem auto 0;
+    text-align: center;
+    color: #555;
+    font-size: 1rem;
+}
 
 /* Contact Section */
 
@@ -755,6 +807,15 @@ footer {
     .tech-tag {
         white-space: nowrap;
     }
+
+    .video-stage {
+        height: 85vh;
+        min-height: 360px;
+    }
+
+    .demo-description {
+        font-size: 0.95rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -801,6 +862,18 @@ footer {
         width: 100%;
         max-width: 100%;
         box-sizing: border-box;
+    }
+
+    .demo-description {
+        margin-top: 1rem;
+    }
+
+    .video-skeleton {
+        padding: 14px;
+    }
+
+    .skeleton-poster {
+        min-height: 180px;
     }
 
     .logo {
