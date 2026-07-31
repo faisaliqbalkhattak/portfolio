@@ -1,0 +1,39 @@
+# Faisal Iqbal - Portfolio
+
+A modern, responsive single-page portfolio website showcasing my skills, projects, and experience as a Software Engineering student.
+
+## Features
+
+- **Modern Glass-morphism Design**: Beautiful backdrop-filter effects with transparency
+- **Responsive Mobile Navigation**: Hamburger menu with smooth slide-in animation
+- **Single-Page Architecture**: Smooth scrolling navigation between sections
+- **Professional Sections**: Home, Skills, Projects, Experience, and Contact
+- **Mobile Optimized**: Clean, optimized mobile experience
+
+## Sections
+
+- **Home**: Professional introduction and about me
+- **Skills**: Technical competencies across multiple domains
+- **Projects**: Featured software development projects with GitHub links
+- **Contact**: Professional contact information
+
+## Technologies Used
+
+- HTML5
+- CSS3 (Glass-morphism, Flexbox, Grid)
+- JavaScript (Smooth scrolling, Mobile navigation)
+- Responsive Design
+
+## Live Demo
+
+Visit the live portfolio at: [Portfolio Website](https://faisaliqbalkhattak.github.io/portfolio)
+
+## Contact
+
+- **Email**: fiqbal.bese23seecs@seecs.edu.pk
+- **GitHub**: [faisaliqbalkhattak](https://github.com/faisaliqbalkhattak)
+- **LinkedIn**: [faisaliqbalkhattak](https://linkedin.com/in/faisaliqbalkhattak)
+
+---
+
+Designed & Developed with ✨ by [Faisal Iqbal](https://github.com/faisaliqbalkhattak) © 2026
