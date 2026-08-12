@@ -36,4 +36,4 @@ Visit the live portfolio at: [Portfolio Website](https://faisaliqbalkhattak.gith
 
 ---
 
-Designed & Developed with ✨ by [Faisal Iqbal](https://github.com/faisaliqbalkhattak) © 2026
+Designed and developed by [Faisal Iqbal](https://github.com/faisaliqbalkhattak) (c) 2026

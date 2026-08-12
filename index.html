@@ -6,25 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Faisal Iqbal - Portfolio</title>
     <link rel="stylesheet" href="styles.css">
-
-
-
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
 </head>
 
 <body>
     <header>
         <nav>
             <div class="logo"><a href="#home">Faisal Iqbal</a></div>
-            <div class="menu-toggle" id="mobile-menu">
+            <button type="button" class="menu-toggle" id="mobile-menu" aria-label="Open navigation" aria-controls="nav-links" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
             <ul class="nav-links" id="nav-links">
                 <li><a href="#home">Home</a></li>
+                <li><a href="#education">Education</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#projects">Projects</a></li>
-                <li><a href="#education">Education</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -35,17 +34,13 @@
     <section id="home">
         <div class="home-header">
             <h1>Hi, I'm <span class="highlight">Faisal Iqbal</span></h1>
-            <p class="subtitle">Software Engineering Student (6th semester)</p>
+            <p class="subtitle"><span>Senior Year</span><span>Software Engineer</span></p>
         </div>
 
         <div class="content">
             <div class="text-content">
                 <h2>SUMMARY</h2>
-                <p>Software Engineering student focused on building functional, reliable applications that solve real
-                    problems. I combine a strong understanding of logic and mathematics with practical development
-                    skills to create software that works properly and efficiently. Experienced in the MERN stack and
-                    backend architecture, I am looking to apply my problem-solving mindset in a professional engineering
-                    environment to deliver robust solutions.</p>
+                <p>Senior-year Software Engineering student at NUST with a strong grip on mathematics, logic, and programming. Equipped with multidisciplinary knowledge spanning the MERN stack, immersive technologies, digital twins, embedded systems, and machine learning, I want to apply my skills to systems and products that solve real-world problems, have community impact, and are focused on the SDGs.</p>
             </div>
 
             <div class="home-aside">
@@ -57,53 +52,77 @@
 
 
 
-    <!-- Experience Section -->
-    <section id="experience">
+    <!-- Education Section -->
+    <section id="education">
         <div class="section-header">
-            <h2>Work <span class="highlight">Experience</span></h2>
-            <p>Professional internships and industrial exposure</p>
+            <p class="eyebrow">Academic foundation</p>
+            <h2>My <span class="highlight">Education</span></h2>
+            <p>Software engineering study backed by hands-on technical work.</p>
         </div>
 
         <div class="education-grid">
-            <div class="education-card">
-                <div class="education-icon">🛡️</div>
-                <h3>AgriStreams | Cyber Security Intern</h3>
-                <p class="degree">June 2025 – August 2025</p>
-                <div class="coursework">
-                    <ul>
-                        <li>Developed a Machine Learning model to detect malicious requests by analyzing URL headers and
-                            request bodies for suspicious patterns.</li>
-                        <li>Gained hands-on experience with Web Application Firewalls (WAF) and deep-dived into firewall
-                            working principles and operation.</li>
-                    </ul>
+            <article class="education-card">
+                <div class="education-heading">
+                    <img src="images/nust.png" alt="NUST logo" class="edu-logo">
+                    <div><p class="eyebrow">2023 - 2027</p><h3>National University of Sciences and Technology</h3><p class="degree">Bachelor of Engineering in Software Engineering - Islamabad</p></div>
                 </div>
-            </div>
+                <p class="cgpa"><strong>CGPA: 3.34 / 4.00</strong></p>
+                <div class="coursework"><h4>Core systems</h4><p>Data Structures and Algorithms, Operating Systems, Database Systems, Computer Networks, Software Design and Architecture.</p></div>
+                <div class="coursework"><h4>Applied engineering</h4><p>Formal Methods, Software Quality Engineering, Web Engineering, Embedded Systems, Machine Learning, and Cloud Computing.</p></div>
+            </article>
 
-            <div class="education-card">
-                <div class="education-icon">📊</div>
-                <h3>OneScreen | Dataset Preparation Contract</h3>
-                <p class="degree">March 2025 – April 2025</p>
-                <div class="coursework">
-                    <ul>
-                        <li>Scripted data collection and cleaning pipelines to transform raw web data into structured
-                            datasets for model training.</li>
-                        <li>Performed noise removal, pattern matching, and normalization to ensure high-quality data
-                            columns.</li>
-                    </ul>
+            <article class="education-card giki-card">
+                <div class="education-heading">
+                    <img src="images/giki.png" alt="GIK Institute logo" class="edu-logo">
+                    <div><p class="eyebrow">Summer 2026</p><h3>GIK Institute</h3><p class="degree">CATCH_VR Summer School - Topi, Pakistan</p></div>
                 </div>
-            </div>
+                <img src="images/Catch-VR.png" alt="CATCH_VR logo" class="catch-vr-logo">
+                <p class="cgpa"><strong>Cofunded by Erasmus+ and European Union</strong></p>
+                <div class="coursework"><p>A two-week intensive bootcamp on immersive technologies, IoT, and digital twins. I led the Data Drifters team alongside hardware, backend, and Unity collaborators. Our project won 1st Place — Best Digital Twin Category out of 33 submissions. See the <a href="#projects">AquaTwin project</a> for details.</p></div>
+            </article>
+        </div>
+    </section>
 
-            <div class="education-card">
-                <div class="education-icon">🤝</div>
-                <h3>Alkhidmat Pakistan | Student Intern</h3>
-                <p class="degree">June 2025 – August 2025</p>
-                <div class="coursework">
-                    <ul>
-                        <li>Coordinated logistics and cross-team communication for large-scale programmes.</li>
-                        <li>Produced organized research summaries and reports under strict weekly deadlines.</li>
-                    </ul>
-                </div>
-            </div>
+
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="section-header">
+            <p class="eyebrow">Recent work</p>
+            <h2>Work <span class="highlight">Experience</span></h2>
+            <p>Engineering work across connected systems, security, and data.</p>
+        </div>
+
+        <div class="experience-grid">
+            <article class="experience-card experience-card-featured">
+                <div class="card-kicker"><i data-lucide="code-2" aria-hidden="true"></i><span>Web Developer</span><span class="card-year">Jul - Aug 2026</span></div>
+                <h3>Gemorph</h3>
+                <p class="degree">Gemorph.com</p>
+                <p>Built the entire gemorph.com website — turned an inherited Vite/React codebase into a focused, investor-ready marketing site with a Canvas DNA hero animation, scroll-driven reveals, and a serverless MDX blog system.</p>
+                <div class="tech-tags"><span class="tech-tag">React 19</span><span class="tech-tag">TypeScript</span><span class="tech-tag">Tailwind CSS</span><span class="tech-tag">Canvas 2D</span><span class="tech-tag">Framer Motion</span><span class="tech-tag">MDX</span></div>
+                <a href="https://gemorph.com" class="btn" target="_blank" rel="noopener noreferrer">Visit gemorph.com</a>
+            </article>
+
+            <article class="experience-card">
+                <div class="card-kicker"><i data-lucide="shield-check" aria-hidden="true"></i><span>Internship</span><span class="card-year">Jun - Aug 2025</span></div>
+                <h3>AgriStreams | Cybersecurity Intern</h3>
+                <p>Developed a machine learning model to flag malicious requests by inspecting URL headers and request bodies. Studied Web Application Firewall behavior and the principles behind request filtering.</p>
+                <div class="tech-tags"><span class="tech-tag">Python</span><span class="tech-tag">Machine Learning</span><span class="tech-tag">WAF</span></div>
+            </article>
+
+            <article class="experience-card">
+                <div class="card-kicker"><i data-lucide="database-zap" aria-hidden="true"></i><span>Contract</span><span class="card-year">Mar - Apr 2025</span></div>
+                <h3>OneScreen | Dataset Preparation</h3>
+                <p>Built scripts that collected and cleaned web data for model training. Removed noise, matched patterns, and normalized fields so the resulting datasets were ready for downstream use.</p>
+                <div class="tech-tags"><span class="tech-tag">Python</span><span class="tech-tag">Data Cleaning</span><span class="tech-tag">Automation</span></div>
+            </article>
+
+            <article class="experience-card">
+                <div class="card-kicker"><i data-lucide="users" aria-hidden="true"></i><span>Student internship</span><span class="card-year">Jun - Aug 2025</span></div>
+                <h3>Alkhidmat Pakistan</h3>
+                <p>Coordinated logistics and cross-team communication for large programmes. Prepared research summaries and reports against weekly deadlines.</p>
+                <div class="tech-tags"><span class="tech-tag">Coordination</span><span class="tech-tag">Research</span><span class="tech-tag">Reporting</span></div>
+            </article>
         </div>
     </section>
 
@@ -111,15 +130,28 @@
     <section id="projects">
         <div class="section-header">
             <h2>Featured <span class="highlight">Projects</span></h2>
-            <p>A comprehensive portfolio showcasing innovative software development projects and technical expertise</p>
+            <p>Selected projects with a focus on useful systems, clear engineering, and measurable outcomes.</p>
         </div>
 
         <div class="projects-grid">
 
+            <!-- AquaTwin -->
+            <article class="project-card project-card-featured">
+                <div class="project-header">
+                    <div class="project-icon" aria-hidden="true"><i data-lucide="waves"></i></div>
+                    <div class="project-date">2026</div>
+                </div>
+                <p class="eyebrow">CATCH_VR Summer School | GIK Institute</p>
+                <h3>AquaTwin | Groundwater Digital Twin</h3>
+                <p>Developed by the Data Drifters team during the CATCH_VR Summer School at GIK Institute, AquaTwin is a city-scale groundwater digital twin. Independent sensor units on multiple wells and bores send readings to the cloud, where the data is processed into a 3D map of groundwater across a locality or city. The system supports policy makers, public awareness of groundwater depletion, and better city planning across SDG 6, Clean Water and Sanitation, and SDG 11, Sustainable Cities and Communities.</p>
+                <div class="tech-tags"><span class="tech-tag">Data Drifters</span><span class="tech-tag">ESP32-S3</span><span class="tech-tag">Cloud Telemetry</span><span class="tech-tag">Unity</span><span class="tech-tag">3D Digital Twin</span><span class="tech-tag">SDG 6</span><span class="tech-tag">SDG 11</span></div>
+                <a href="#aqua-twin-demo" class="btn">Watch Demo</a>
+            </article>
+
             <!-- Scrambled Canvas Parser -->
             <div class="project-card">
                 <div class="project-header">
-                    <div class="project-icon">🎨</div>
+                    <div class="project-icon" aria-hidden="true"><i data-lucide="panels-top-left"></i></div>
                     <div class="project-date">2026</div>
                 </div>
                 <h3>Scrambled Canvas Parser</h3>
@@ -135,14 +167,14 @@
                     <span class="tech-tag">SSE</span>
                     <span class="tech-tag">Pillow</span>
                 </div>
-                <a href="https://github.com/faisaliqbalkhattak/scrambled-canvas-parser" class="btn" target="_blank">View
+                <a href="https://github.com/faisaliqbalkhattak/scrambled-canvas-parser" class="btn" target="_blank" rel="noopener noreferrer">View
                     Code</a>
                 <a href="#scrambled-canvas-parser" class="btn">Watch Demo</a>
             </div>
             <!-- asset management -->
             <div class="project-card">
                 <div class="project-header">
-                    <div class="project-icon">📦</div>
+                    <div class="project-icon" aria-hidden="true"><i data-lucide="boxes"></i></div>
                     <div class="project-date">2026</div>
                 </div>
                 <h3>Asset Management System</h3>
@@ -156,7 +188,7 @@
                     <span class="tech-tag">Node.js</span>
                     <span class="tech-tag">SQLite</span>
                 </div>
-                <a href="https://github.com/faisaliqbalkhattak/asset-management-system" class="btn" target="_blank">View
+                <a href="https://github.com/faisaliqbalkhattak/asset-management-system" class="btn" target="_blank" rel="noopener noreferrer">View
                     Code</a>
                 <a href="#asset-management-system" class="btn">Watch Demo</a>
             </div>
@@ -164,7 +196,7 @@
             <!-- Afwaah -->
             <div class="project-card">
                 <div class="project-header">
-                    <div class="project-icon">🚀</div>
+                    <div class="project-icon" aria-hidden="true"><i data-lucide="radio-tower"></i></div>
                     <div class="project-date">2026</div>
                 </div>
                 <h3>Afwaah (Decentralized Anonymous Rumor Verification System)</h3>
@@ -180,8 +212,8 @@
                     <span class="tech-tag">Zero-Knowledge Proofs</span>
                 </div>
                 <a href="https://github.com/faisaliqbalkhattak/afwaah-rumour-verification" class="btn"
-                    target="_blank">View Code</a>
-                <a href="https://afwaah-rumour-verification.vercel.app/" class="btn" target="_blank">Live Demo</a>
+                    target="_blank" rel="noopener noreferrer">View Code</a>
+                <a href="https://afwaah-rumour-verification.vercel.app/" class="btn" target="_blank" rel="noopener noreferrer">Live Demo</a>
                 <a href="#afwaah-rumour-verification" class="btn">Watch Demo</a>
 
             </div>
@@ -189,7 +221,7 @@
             <!-- peersupport hub -->
             <div class="project-card">
                 <div class="project-header">
-                    <div class="project-icon">🤝</div>
+                    <div class="project-icon" aria-hidden="true"><i data-lucide="handshake"></i></div>
                     <div class="project-date">2025</div>
                 </div>
                 <h3>PeerSupportHub</h3>
@@ -203,18 +235,18 @@
                     <span class="tech-tag">React</span>
                     <span class="tech-tag">Node.js</span>
                 </div>
-                <a href="https://github.com/sbukhari23/PeerSupportHub" class="btn" target="_blank">View Code</a>
+                <a href="https://github.com/sbukhari23/PeerSupportHub" class="btn" target="_blank" rel="noopener noreferrer">View Code</a>
                 <a href="#peer-support-demo" class="btn">Watch Demo</a>
             </div>
 
             <!--  producer consumer project-->
             <div class="project-card">
                 <div class="project-header">
-                    <div class="project-icon">🔄</div>
+                    <div class="project-icon" aria-hidden="true"><i data-lucide="refresh-cw"></i></div>
                     <div class="project-date">2026</div>
                 </div>
-                <h3>Producer–Consumer Buffer Model Checking</h3>
-                <p>Designed and formally verified a concurrent Producer–Consumer system using NuSMV and Linear Temporal
+                <h3>Producer-Consumer Buffer Model Checking</h3>
+                <p>Designed and formally verified a concurrent Producer-Consumer system using NuSMV and Linear Temporal
                     Logic (LTL). Built a scheduler-based model with two producers, two consumers, and an explicit 4-slot
                     FIFO buffer, verifying 15 correctness properties including safety, liveness, mutual exclusion,
                     starvation freedom, and FIFO ordering. Also introduced a deliberate synchronization bug to generate
@@ -229,32 +261,31 @@
                 </div>
 
                 <a href="https://github.com/faisaliqbalkhattak/producer-consumer-buffer-nusmv" class="btn"
-                    target="_blank">View Code</a>
+                    target="_blank" rel="noopener noreferrer">View Code</a>
             </div>
 
             <!-- search engine -->
             <div class="project-card">
                 <div class="project-header">
-                    <div class="project-icon">🔍</div>
+                    <div class="project-icon" aria-hidden="true"><i data-lucide="search"></i></div>
                     <div class="project-date">2024</div>
                 </div>
                 <h3>Search Engine Implementation</h3>
                 <p>Built a functional search engine from scratch to understand the logic behind information retrieval.
                     Implemented core indexing algorithms to crawl and rank data, ensuring accurate search results.
-                    Optimized queries to reduce latency, demonstrating a deep understanding of data structures and
-                    algorithmic efficiency.</p>
+                    Optimized query handling to reduce latency and keep result ranking responsive.</p>
                 <div class="tech-tags">
                     <span class="tech-tag">Python</span>
                     <span class="tech-tag">Data Structures</span>
                     <span class="tech-tag">Algorithms</span>
                 </div>
-                <a href="https://github.com/faisaliqbalkhattak/search-engine" class="btn" target="_blank">View Code</a>
+                <a href="https://github.com/faisaliqbalkhattak/search-engine" class="btn" target="_blank" rel="noopener noreferrer">View Code</a>
             </div>
 
             <!-- kali and other frontend clones -->
             <div class="project-card">
                 <div class="project-header">
-                    <div class="project-icon">🖥️</div>
+                    <div class="project-icon" aria-hidden="true"><i data-lucide="monitor"></i></div>
                     <div class="project-date">2025</div>
                 </div>
                 <h3>Frontend Architecture Replications (Kali Linux & Amazon)</h3>
@@ -266,14 +297,14 @@
                     <span class="tech-tag">Responsive Design</span>
                 </div>
                 <a href="https://github.com/faisaliqbalkhattak/kali-linux-website-clone-project/" class="btn"
-                    target="_blank">Kali Clone</a>
+                    target="_blank" rel="noopener noreferrer">Kali Clone</a>
                 <a href="https://github.com/faisaliqbalkhattak/amazon-website-clone-project/" class="btn"
-                    target="_blank">Amazon Clone</a>
+                    target="_blank" rel="noopener noreferrer">Amazon Clone</a>
             </div>
 
             <div class="project-card">
                 <div class="project-header">
-                    <div class="project-icon">🔧</div>
+                    <div class="project-icon" aria-hidden="true"><i data-lucide="wrench"></i></div>
                     <div class="project-date">2026</div>
                 </div>
                 <h3>JavaScript Utilities Collection</h3>
@@ -286,12 +317,12 @@
                     <span class="tech-tag">DOM</span>
                 </div>
                 <a href="https://github.com/faisaliqbalkhattak/javascript-api-practice" class="btn"
-                    target="_blank">Currency Converter</a>
-                <a href="https://faisaliqbalkhattak.github.io/javascript-api-practice" class="btn" target="_blank">Live
+                    target="_blank" rel="noopener noreferrer">Currency Converter</a>
+                <a href="https://faisaliqbalkhattak.github.io/javascript-api-practice" class="btn" target="_blank" rel="noopener noreferrer">Live
                     Demo</a>
-                <a href="https://github.com/faisaliqbalkhattak/rock-scissor-paper" class="btn" target="_blank">Logic
+                <a href="https://github.com/faisaliqbalkhattak/rock-scissor-paper" class="btn" target="_blank" rel="noopener noreferrer">Logic
                     Games</a>
-                <a href="https://faisaliqbalkhattak.github.io/rock-scissor-paper" class="btn" target="_blank">Live
+                <a href="https://faisaliqbalkhattak.github.io/rock-scissor-paper" class="btn" target="_blank" rel="noopener noreferrer">Live
                     Demo</a>
             </div>
         </div>
@@ -303,7 +334,7 @@
 
         <!-- scrambled-canvas-parser Demo -->
         <div class="section-header">
-            <h2>scrambled-canvas-parser <span class="highlight">Demo</span></h2>
+            <h2>Scrambled Canvas Parser <span class="highlight">Demo</span></h2>
             <p>Running application demo video.</p>
         </div>
 
@@ -311,14 +342,13 @@
             <div class="demo-device" aria-label="scrambled-canvas-parser demo video shown inside a frame">
                 <div class="video-stage">
 
-                    <video id="scrambled-canvas-parser" class="demo-video" src="videos/scrambled-canvas-parser.mp4"
+                    <video class="demo-video" src="videos/scrambled-canvas-parser.mp4"
                         autoplay controls muted loop playsinline preload="metadata"
                         aria-label="scrambled-canvas-parser demo video"></video>
                 </div>
             </div>
 
-            <p class="demo-description">This is the scrambled-canvas-parser demo video. It demonstrates the key features
-                and functionality of the application.</p>
+            <p class="demo-description">A walkthrough of the tile reconstruction pipeline and live processing output.</p>
         </div>
 
         <!-- asset management system Demo -->
@@ -331,13 +361,12 @@
             <div class="demo-device" aria-label="Asset management system demo video shown inside a frame">
                 <div class="video-stage">
 
-                    <video id="asset-management-system" class="demo-video" src="videos/asset-management-system.mp4" autoplay controls
+                    <video class="demo-video" src="videos/asset-management-system.mp4" autoplay controls
                         muted loop playsinline preload="metadata" aria-label="Asset management system demo video"></video>
                 </div>
             </div>
 
-            <p class="demo-description">This is the Asset management system demo video. It demonstrates the key features and
-                functionality of the application.</p>
+            <p class="demo-description">A walkthrough of the local inventory, personnel, and finance workflows.</p>
         </div>
 
       
@@ -352,18 +381,17 @@
             <div class="demo-device" aria-label="PeerSupportHub demo video shown inside a frame">
                 <div class="video-stage">
 
-                    <video id="peer-support-demo" class="demo-video" src="videos/PeerSupportHub.mp4" autoplay controls
+                    <video class="demo-video" src="videos/PeerSupportHub.mp4" autoplay controls
                         muted loop playsinline preload="metadata" aria-label="PeerSupportHub demo video"></video>
                 </div>
             </div>
 
-            <p class="demo-description">This is the PeerSupportHub demo video. It demonstrates the key features and
-                functionality of the application.</p>
+            <p class="demo-description">A walkthrough of the peer and mentor session workflows.</p>
         </div>
 
           <!-- afwaah-rumour-verification Demo -->
         <div class="section-header">
-            <h2>afwaah-rumour-verification <span class="highlight">Demo</span></h2>
+            <h2>Afwaah (Rumour-Verification) <span class="highlight">Demo</span></h2>
             <p>Running application demo video.</p>
         </div>
 
@@ -371,56 +399,41 @@
             <div class="demo-device" aria-label="afwaah-rumour-verification  demo video shown inside a frame">
                 <div class="video-stage">
 
-                    <video id="afwaah-rumour-verification" class="demo-video"
+                    <video class="demo-video"
                         src="videos/afwaah-rumour-verification.mp4" autoplay controls muted loop playsinline
                         preload="metadata" aria-label="afwaah-rumour-verification  demo video"></video>
                 </div>
             </div>
 
-            <p class="demo-description">This is the afwaah-rumour-verification demo video. It demonstrates the key
-                features and functionality of the application.</p>
+            <p class="demo-description">A walkthrough of anonymous rumor submission and verification flows.</p>
         </div>
-    </section>
 
-    <!-- Education Section -->
-    <section id="education">
+        <!-- AquaTwin Demo -->
         <div class="section-header">
-            <h2>My <span class="highlight">Education</span></h2>
-            <p>Academic background and achievements</p>
+            <h2>AquaTwin <span class="highlight">Demo</span></h2>
+            <p>AI-generated demonstration of the project concept.</p>
         </div>
 
-        <div class="education-grid">
-            <div class="education-card">
-                <div class="education-icon">🎓</div>
-                <h3>National University of Sciences and Technology (NUST), Islamabad</h3>
-                <p class="degree">Bachelor of Engineering in Software Engineering | 2023 – 2027</p>
-                <p class="cgpa"><strong>CGPA: 3.34 / 4.00</strong></p>
-                <div class="coursework">
-                    <h4>Systems & Algorithms:</h4>
-                    <p>Data Structures & Algorithms, Design & Analysis of Algorithms, Operating Systems, Database
-                        Systems, Computer Networks.</p>
-                </div>
-                <div class="coursework">
-                    <h4>Software Engineering Excellence:</h4>
-                    <p>Formal Methods, Software Project Management, Software Quality Engineering, Software Construction,
-                        Software Design & Architecture.</p>
-                </div>
-                <div class="coursework">
-                    <h4>Modern Technologies:</h4>
-                    <p>Machine Learning, Cloud Computing, Web Engineering, Embedded Systems, Object Oriented Programming
-                        (OOP).</p>
+        <div id="aqua-twin-demo" class="demo-card">
+            <div class="demo-device" aria-label="AquaTwin demo video shown inside a frame">
+                <div class="video-stage">
+
+                    <video class="demo-video"
+                        src="videos/aqua-twin-demo.mp4" autoplay controls muted loop playsinline
+                        preload="metadata" aria-label="AquaTwin demo video"></video>
                 </div>
             </div>
+
+            <p class="demo-description">AI demonstration of the AquaTwin groundwater digital twin concept.</p>
         </div>
     </section>
-
-
 
     <!-- Skills Section -->
     <section id="skills">
         <div class="section-header">
-            <h2>My <span class="highlight">Skills</span> & Expertise</h2>
-            <p>A comprehensive overview of my technical skills and competencies</p>
+            <p class="eyebrow">Technical toolkit</p>
+            <h2>My <span class="highlight">Skills</span> and Expertise</h2>
+            <p>Tools I use to build, test, and explain working systems.</p>
         </div>
 
         <div class="skills-container">
@@ -511,14 +524,13 @@
     <section id="contact">
         <div class="section-header">
             <h2><span class="highlight">Contact</span> Me</h2>
-            <p>Connect with me for collaboration opportunities and professional inquiries</p>
+            <p>Available for software engineering opportunities, project work, and thoughtful collaboration.</p>
         </div>
 
         <div class="contact-grid">
             <div class="contact-card">
                 <div class="contact-info-col">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="Email"
-                        class="contact-icon">
+                    <i data-lucide="mail" class="contact-icon" aria-hidden="true"></i>
                     <h3>Email</h3>
                 </div>
                 <div class="contact-address-col">
@@ -528,8 +540,7 @@
 
             <div class="contact-card">
                 <div class="contact-info-col">
-                    <img src="https://cdn-icons-png.flaticon.com/512/724/724664.png" alt="Phone" class="contact-icon"
-                        style="filter: brightness(0) saturate(100%) invert(48%) sepia(96%) show(4456%) hue-rotate(81deg) brightness(101%) contrast(101%);">
+                    <i data-lucide="phone" class="contact-icon" aria-hidden="true"></i>
                     <h3>Phone</h3>
                 </div>
                 <div class="contact-address-col">
@@ -539,24 +550,22 @@
 
             <div class="contact-card">
                 <div class="contact-info-col">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
-                        alt="GitHub" class="contact-icon">
+                    <i data-lucide="github" class="contact-icon" aria-hidden="true"></i>
                     <h3>GitHub</h3>
                 </div>
                 <div class="contact-address-col">
-                    <a href="https://github.com/faisaliqbalkhattak" target="_blank">github.com/faisaliqbalkhattak</a>
+                    <a href="https://github.com/faisaliqbalkhattak" target="_blank" rel="noopener noreferrer">github.com/faisaliqbalkhattak</a>
                 </div>
             </div>
 
             <div class="contact-card">
                 <div class="contact-info-col">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg"
-                        alt="LinkedIn" class="contact-icon">
+                    <i data-lucide="linkedin" class="contact-icon" aria-hidden="true"></i>
                     <h3>LinkedIn</h3>
                 </div>
                 <div class="contact-address-col">
                     <a href="https://linkedin.com/in/faisaliqbalkhattak/"
-                        target="_blank">linkedin.com/in/faisaliqbalkhattak</a>
+                        target="_blank" rel="noopener noreferrer">linkedin.com/in/faisaliqbalkhattak</a>
                 </div>
             </div>
         </div>
@@ -564,7 +573,7 @@
 
     <footer>
         <div class="footer-content">
-            <p>Designed & Developed with ✨ by <span class="highlight">Faisal Iqbal</span> © 2026</p>
+            <p>Designed and developed by <span class="highlight">Faisal Iqbal</span> - 2026</p>
         </div>
     </footer>
 
