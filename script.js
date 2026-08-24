@@ -1,5 +1,7 @@
 const mobileMenu = document.getElementById('mobile-menu');
 const navLinks = document.getElementById('nav-links');
+const projectDropdown = document.querySelector('.nav-dropdown');
+const projectToggle = document.querySelector('.nav-dropdown-toggle');
 
 mobileMenu.addEventListener('click', () => {
     const isOpen = mobileMenu.classList.toggle('active');
@@ -15,15 +17,29 @@ function closeMobileMenu() {
     mobileMenu.setAttribute('aria-label', 'Open navigation');
 }
 
+function closeProjectDropdown() {
+    projectDropdown.classList.remove('open');
+    projectToggle.setAttribute('aria-expanded', 'false');
+}
+
+projectToggle.addEventListener('click', () => {
+    const isOpen = projectDropdown.classList.toggle('open');
+    projectToggle.setAttribute('aria-expanded', String(isOpen));
+});
+
 navLinks.addEventListener('click', (event) => {
     if (event.target.tagName === 'A') {
         closeMobileMenu();
+        closeProjectDropdown();
     }
 });
 
 document.addEventListener('click', (event) => {
     if (!mobileMenu.contains(event.target) && !navLinks.contains(event.target)) {
         closeMobileMenu();
+    }
+    if (!projectDropdown.contains(event.target)) {
+        closeProjectDropdown();
     }
 });
 
@@ -45,7 +61,7 @@ if (window.lucide) {
     window.lucide.createIcons();
 }
 
-window.addEventListener('scroll', () => {
+function updateActiveNav() {
     const sections = document.querySelectorAll('section');
     const links = document.querySelectorAll('.nav-links a');
     let current = '';
@@ -58,7 +74,22 @@ window.addEventListener('scroll', () => {
         }
     });
 
+    const contact = document.getElementById('contact');
+    if (contact) {
+        const contactBounds = contact.getBoundingClientRect();
+        const visibleHeight = Math.max(0, Math.min(contactBounds.bottom, window.innerHeight) - Math.max(contactBounds.top, 0));
+        if (visibleHeight >= contactBounds.height * 0.5) {
+            current = 'contact';
+        }
+    }
+
     links.forEach((link) => {
-        link.classList.toggle('active', link.getAttribute('href') === `#${current}`);
+        const linkSection = link.closest('.nav-dropdown')?.dataset.navSection || link.getAttribute('href').slice(1);
+        const sectionForNav = current === 'demo-videos' ? 'projects' : current;
+        link.classList.toggle('active', linkSection === sectionForNav && !link.closest('.nav-dropdown'));
     });
-});
+    projectDropdown.classList.toggle('active', current === 'projects' || current === 'demo-videos');
+}
+
+window.addEventListener('scroll', updateActiveNav);
+updateActiveNav();

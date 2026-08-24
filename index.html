@@ -23,7 +23,13 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#education">Education</a></li>
                 <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
+                <li class="nav-dropdown" data-nav-section="projects">
+                    <button type="button" class="nav-dropdown-toggle" aria-expanded="false">Projects <i data-lucide="chevron-down" aria-hidden="true"></i></button>
+                    <div class="nav-dropdown-menu">
+                        <a href="#projects">Project Description</a>
+                        <a href="#demo-videos">Demo Videos</a>
+                    </div>
+                </li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -95,6 +101,13 @@
 
         <div class="experience-grid">
             <article class="experience-card experience-card-featured">
+                <div class="card-kicker"><i data-lucide="brain-circuit" aria-hidden="true"></i><span>Machine Learning Intern</span><span class="card-year">10 Jul - 2 Sep 2026</span></div>
+                <h3>10Pearls Shine Internship Program</h3>
+                <p>Built karAQI, an end-to-end machine learning system that forecasts Karak's air quality 72 hours ahead using Open-Meteo reanalysis data. Experimented with LSTM, Random Forest, and classical forecasting models, but they were slower or less effective for this dataset, so XGBoost and Ridge were selected for production. Automated feature engineering, model training, and forecast delivery to a Streamlit dashboard with DuckDB, MLflow, and GitHub Actions.</p>
+                <div class="tech-tags"><span class="tech-tag">Python</span><span class="tech-tag">Machine Learning</span><span class="tech-tag">XGBoost</span><span class="tech-tag">DuckDB</span><span class="tech-tag">MLflow</span><span class="tech-tag">Streamlit</span></div>
+            </article>
+
+            <article class="experience-card">
                 <div class="card-kicker"><i data-lucide="code-2" aria-hidden="true"></i><span>Web Developer</span><span class="card-year">Jul - Aug 2026</span></div>
                 <h3>Gemorph</h3>
                 <p class="degree">Gemorph.com</p>
@@ -111,14 +124,7 @@
             </article>
 
             <article class="experience-card">
-                <div class="card-kicker"><i data-lucide="database-zap" aria-hidden="true"></i><span>Contract</span><span class="card-year">Mar - Apr 2025</span></div>
-                <h3>OneScreen | Dataset Preparation</h3>
-                <p>Built scripts that collected and cleaned web data for model training. Removed noise, matched patterns, and normalized fields so the resulting datasets were ready for downstream use.</p>
-                <div class="tech-tags"><span class="tech-tag">Python</span><span class="tech-tag">Data Cleaning</span><span class="tech-tag">Automation</span></div>
-            </article>
-
-            <article class="experience-card">
-                <div class="card-kicker"><i data-lucide="users" aria-hidden="true"></i><span>Student internship</span><span class="card-year">Jun - Aug 2025</span></div>
+                <div class="card-kicker"><i data-lucide="users" aria-hidden="true"></i><span>Volunteer</span><span class="card-year">Jun - Aug 2025</span></div>
                 <h3>Alkhidmat Pakistan</h3>
                 <p>Coordinated logistics and cross-team communication for large programmes. Prepared research summaries and reports against weekly deadlines.</p>
                 <div class="tech-tags"><span class="tech-tag">Coordination</span><span class="tech-tag">Research</span><span class="tech-tag">Reporting</span></div>
@@ -147,6 +153,25 @@
                 <div class="tech-tags"><span class="tech-tag">Data Drifters</span><span class="tech-tag">ESP32-S3</span><span class="tech-tag">Cloud Telemetry</span><span class="tech-tag">Unity</span><span class="tech-tag">3D Digital Twin</span><span class="tech-tag">SDG 6</span><span class="tech-tag">SDG 11</span></div>
                 <a href="#aqua-twin-demo" class="btn">Watch Demo</a>
             </article>
+
+            <!-- karAQI -->
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-icon" aria-hidden="true"><i data-lucide="wind"></i></div>
+                    <div class="project-date">2026</div>
+                </div>
+                <h3>karAQI | Air Quality Forecasting System</h3>
+                <p>Built an end-to-end machine learning system that forecasts Karak's air quality 72 hours ahead using Open-Meteo reanalysis data, a DuckDB feature store, and XGBoost and Ridge models. Automated CI/CD pipelines fetch data, retrain models, compare champions, and publish pre-computed forecasts to a Streamlit dashboard for near-instant loading. The project brings transparent AQI forecasting to a region without a local monitoring station.</p>
+                <div class="tech-tags">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">XGBoost</span>
+                    <span class="tech-tag">DuckDB</span>
+                    <span class="tech-tag">MLflow</span>
+                    <span class="tech-tag">Streamlit</span>
+                    <span class="tech-tag">GitHub Actions</span>
+                </div>
+                <a href="https://github.com/faisaliqbalkhattak/karAQI" class="btn" target="_blank" rel="noopener noreferrer">View Code</a>
+            </div>
 
             <!-- Scrambled Canvas Parser -->
             <div class="project-card">
@@ -264,24 +289,6 @@
                     target="_blank" rel="noopener noreferrer">View Code</a>
             </div>
 
-            <!-- search engine -->
-            <div class="project-card">
-                <div class="project-header">
-                    <div class="project-icon" aria-hidden="true"><i data-lucide="search"></i></div>
-                    <div class="project-date">2024</div>
-                </div>
-                <h3>Search Engine Implementation</h3>
-                <p>Built a functional search engine from scratch to understand the logic behind information retrieval.
-                    Implemented core indexing algorithms to crawl and rank data, ensuring accurate search results.
-                    Optimized query handling to reduce latency and keep result ranking responsive.</p>
-                <div class="tech-tags">
-                    <span class="tech-tag">Python</span>
-                    <span class="tech-tag">Data Structures</span>
-                    <span class="tech-tag">Algorithms</span>
-                </div>
-                <a href="https://github.com/faisaliqbalkhattak/search-engine" class="btn" target="_blank" rel="noopener noreferrer">View Code</a>
-            </div>
-
             <!-- kali and other frontend clones -->
             <div class="project-card">
                 <div class="project-header">
@@ -302,35 +309,11 @@
                     target="_blank" rel="noopener noreferrer">Amazon Clone</a>
             </div>
 
-            <div class="project-card">
-                <div class="project-header">
-                    <div class="project-icon" aria-hidden="true"><i data-lucide="wrench"></i></div>
-                    <div class="project-date">2026</div>
-                </div>
-                <h3>JavaScript Utilities Collection</h3>
-                <p>Currency Converter: Built a real-time tool using the Fetch API to handle asynchronous data reliably.
-                    Logic Games: Developed logic-based games (Rock Paper Scissors) to solidify understanding of control
-                    flow and DOM manipulation.</p>
-                <div class="tech-tags">
-                    <span class="tech-tag">JavaScript</span>
-                    <span class="tech-tag">API</span>
-                    <span class="tech-tag">DOM</span>
-                </div>
-                <a href="https://github.com/faisaliqbalkhattak/javascript-api-practice" class="btn"
-                    target="_blank" rel="noopener noreferrer">Currency Converter</a>
-                <a href="https://faisaliqbalkhattak.github.io/javascript-api-practice" class="btn" target="_blank" rel="noopener noreferrer">Live
-                    Demo</a>
-                <a href="https://github.com/faisaliqbalkhattak/rock-scissor-paper" class="btn" target="_blank" rel="noopener noreferrer">Logic
-                    Games</a>
-                <a href="https://faisaliqbalkhattak.github.io/rock-scissor-paper" class="btn" target="_blank" rel="noopener noreferrer">Live
-                    Demo</a>
-            </div>
-        </div>
     </section>
 
     <!--Demos Section -->
     <section id="demo-videos" class="demo-section">
-        
+
 
         <!-- scrambled-canvas-parser Demo -->
         <div class="section-header">
@@ -349,6 +332,25 @@
             </div>
 
             <p class="demo-description">A walkthrough of the tile reconstruction pipeline and live processing output.</p>
+        </div>
+
+                <!-- AquaTwin Demo -->
+        <div class="section-header">
+            <h2>AquaTwin <span class="highlight">Demo</span></h2>
+            <p>Real-time demonstration of the project at GIKI Pakistan.</p>
+        </div>
+
+        <div id="aqua-twin-demo" class="demo-card">
+            <div class="demo-device" aria-label="AquaTwin demo video shown inside a frame">
+                <div class="video-stage">
+
+                    <video class="demo-video"
+                        src="videos/aqua-twin-demo.mp4" autoplay controls muted loop playsinline
+                        preload="metadata" aria-label="AquaTwin demo video"></video>
+                </div>
+            </div>
+
+            <p class="demo-description">Real Time demonstration of the AquaTwin groundwater digital twin.</p>
         </div>
 
         <!-- asset management system Demo -->
@@ -389,7 +391,7 @@
             <p class="demo-description">A walkthrough of the peer and mentor session workflows.</p>
         </div>
 
-          <!-- afwaah-rumour-verification Demo -->
+        <!-- afwaah-rumour-verification Demo -->
         <div class="section-header">
             <h2>Afwaah (Rumour-Verification) <span class="highlight">Demo</span></h2>
             <p>Running application demo video.</p>
@@ -408,24 +410,7 @@
             <p class="demo-description">A walkthrough of anonymous rumor submission and verification flows.</p>
         </div>
 
-        <!-- AquaTwin Demo -->
-        <div class="section-header">
-            <h2>AquaTwin <span class="highlight">Demo</span></h2>
-            <p>AI-generated demonstration of the project concept.</p>
-        </div>
 
-        <div id="aqua-twin-demo" class="demo-card">
-            <div class="demo-device" aria-label="AquaTwin demo video shown inside a frame">
-                <div class="video-stage">
-
-                    <video class="demo-video"
-                        src="videos/aqua-twin-demo.mp4" autoplay controls muted loop playsinline
-                        preload="metadata" aria-label="AquaTwin demo video"></video>
-                </div>
-            </div>
-
-            <p class="demo-description">AI demonstration of the AquaTwin groundwater digital twin concept.</p>
-        </div>
     </section>
 
     <!-- Skills Section -->
